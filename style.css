@@ -1,0 +1,12 @@
+a {
+    text-decoration: none;
+    color: #212529;
+}
+
+a:hover {
+    color: rgb(8, 8, 189);
+}
+
+.list-group-item {
+    cursor: default;
+}
