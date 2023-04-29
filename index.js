@@ -16,15 +16,20 @@ function createUser(user) {
   cardNameLink.classList.add('mb-1');
 
   const cardName = document.createElement('h5');
-  cardName.classList.add('mb-1');
+  cardName.classList.add('mb-1', 'title-accent');
   cardName.innerText = user.name;
 
   const active = document.createElement('small');
-  active.innerText = user.status;
+  active.innerText = ' ';
+  active.classList.add('badge', 'rounded-pill', 'text-bg-success');
+  console.log(user.status);
+  if (user.status === 'inactive') {
+    active.classList.toggle('text-bg-danger');
+  }
   //
 
   const userMail = document.createElement('p');
-  userMail.classList.add('mb-1');
+  userMail.classList.add('mb-1', 'email');
   userMail.innerText = user.email;
 
   const gender = document.createElement('small');

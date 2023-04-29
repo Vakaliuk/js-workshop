@@ -29,7 +29,7 @@ function createPost(post) {
   postUserLink.classList.add('fw-bold');
 
   const postUserName = document.createElement('h5');
-  postUserName.classList.add('fw-bold');
+  postUserName.classList.add('fw-bold', 'title-accent');
   postUserName.innerText = post.title;
 
   // append all el to postCard
@@ -57,20 +57,18 @@ function getPosts() {
 
     .then((data) => {
       if (!data.length) {
-        const errorMessageBox = createMessageBox(
-          'У цього користувача поки що немає постів.. :('
-        );
+        const errorMessageBox = createMessageBox('This user has no posts.. :(');
         postsContainer.appendChild(errorMessageBox, `success`);
         backLink();
 
         return;
       }
-      backLink();
 
       data.forEach((user) => {
         const card = createPost(user);
         postsContainer.appendChild(card);
       });
+      backLink();
     })
 
     .catch((error) => {
@@ -95,8 +93,8 @@ function createMessageBox(message, type = 'success') {
 function backLink() {
   const backLink = document.createElement('a');
   backLink.setAttribute('href', `./main-users.html`);
-  backLink.classList.add('fw-bold');
-  backLink.innerText = 'Назад';
+  backLink.classList.add('fw-bold', 'backlink');
+  backLink.innerText = '< back';
   postsContainer.appendChild(backLink);
 }
 //
