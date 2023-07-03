@@ -92,7 +92,7 @@ function createMessageBox(message, type = 'success') {
 //link for back
 function backLink() {
   const backLink = document.createElement('a');
-  backLink.setAttribute('href', `./main-users.html`);
+  backLink.setAttribute('href', `./index.html`);
   backLink.classList.add('fw-bold', 'backlink');
   backLink.innerText = '< back';
   postsContainer.appendChild(backLink);
